@@ -1,0 +1,75 @@
+<?php
+require_once 'C:\xampp\htdocs\mvcrevised\View\html\header.phtml';
+?>
+
+
+			<form action="index.php?c=product&a=update&product_id=<?php echo $product['product_id'] ?>" method="POST">
+			<div class="container mt-3"><br>
+				<div class="row">
+					<div class="col-9">
+						<h3>ADD / EDIT PRODUCT</h3>
+					</div>
+					<div class="col-1">
+						<button type="submit" value="submit" class="btn btn-primary">CANCLE</button>
+					</div>
+					<div class="col-2">
+						<button type="submit" value="submit" class="btn btn-primary">SAVE</button>
+					</div>
+				</div> 
+			</div>  
+			<div class="container mt-3">
+				<table class="table table-bordered w-100">
+					<thead>
+						<tr>
+							<th colspan="1">PRODUCT INFORMATION</th>        
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="col-6"></td>
+							<td> <input class="col-6" type="hidden" id="product_id" name="product[product_id]" value="<?php echo $product['product_id'] ?>"></td>
+						</tr>
+						<tr>
+							<td>Name</td>
+							<td> <input class="col-6" type="text" id="name" name="product[name]" value="<?php echo $product['name']  ?>"></td>
+						</tr>
+						<tr>
+							<td>SKU</td>
+							<td> <input class="col-6" type="text" id="sku" name="product[sku]" value="<?php echo $product['sku']  ?>"></td>
+						</tr>
+						<tr>
+							<td>Cost</td>
+							<td> <input class="col-6" type="text" id="cost" name="product[cost]" value="<?php echo $product['cost'] ?>"></td>
+						</tr>
+						<tr>
+							<td>Price</td> 
+							<td> <input class="col-6" type="number" id="price" name="product[price]" value="<?php echo $product['price'] ?>"></td>
+						</tr>
+						<tr>
+							<td>Quantity</td>
+							<td> <input class="col-6" type="number" id="quantity" name="product[quantity]" value="<?php echo $product['quantity'] ?>"></td>
+						</tr>
+						<tr>
+							<td>Description</td>
+							<td> <textarea class="col-6" type='textarea' id="description" name="product[description]" ?></textarea></td>
+						</tr>
+
+						<tr>
+							<td>Color</td>
+							<td> <input class="col-6" type="text" id="color" name="product[color]" value="<?php echo $product['color'] ?>"></td>
+						</tr>
+							<td>Status</td>
+							<td><select name="product[status]" id="status" class="col-6">
+							<?php foreach ($result->getResource()->getStatusOptions() as $key => $value): ?>
+							<option value="<?php echo $key ?>"><?php echo $value ?></option>
+							<?php endforeach; ?>
+							</select>
+							</td>
+						<tr>
+							<td>Material</td>
+							<td	> <input class="col-6" type="text" id="material" name="product[material]" value="<?php echo $product['material'] ?>"></td>
+						</tr>  
+						</tbody>
+					</table>
+				</div>
+			</form>

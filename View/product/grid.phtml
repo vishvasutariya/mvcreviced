@@ -1,0 +1,55 @@
+<?php
+require_once 'C:\xampp\htdocs\mvcrevised\View\html\header.phtml';
+?>
+
+<div class="container-fluid"><br>
+        <div class="row">
+            <div class="col-8">
+                <h3> PRODUCT</h3>
+            </div>
+            <div class="col-4">
+				<button type="button" class="btn btn-primary"><a href="Index.php?a=add&c=product" class="link-light">Add product</a></button>
+            </div>
+        </div>
+    <table class="table table-bordered w-100">
+        <thead>
+			<tr>
+				<th>Product Id</th>
+				<th>NAME</th>
+				<th>SKU </th>
+				<th>Cost</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Description</th>
+				<th>Status</th>
+				<th>Color</th>
+				<th>Material</th>
+				<th>CreatedAt</th>
+				<th>UpdatedAt</th>
+				<th>Edit</th>
+				<th>Delete</th>
+				
+			</tr>
+	</thead>
+
+			<?php foreach ($products as $product):  ?>
+			<tr>
+				<td><?php echo $product['product_id'];?></td>
+				<td><?php echo $product['name'];?></td>
+				<td><?php echo $product['sku'];?></td>
+				<td><?php echo $product['cost'];?></td>
+				<td><?php echo $product['price'];?></td>
+				<td><?php echo $product['quantity'];?></td>
+				<td><?php echo $product['description'];?></td>
+				<td><?php echo $product['status']?></td>
+				<td><?php echo $product['color'];?></td>
+				<td><?php echo $product['material'];?></td>
+				<td><?php echo $product['create_at'];?></td>
+				<td><?php echo $product['update_at'];?></td>
+				<td><a href="index.php?a=edit&c=product&product_id=<?php echo $product['product_id']; ?>">Edit</a></td>
+				<td><a href="index.php?a=delete&c=product&product_id=<?php echo $product['product_id']; ?>">Delete</a></td>
+
+			</tr>
+			<?php endforeach; ?>
+		</table>
+	</form>
